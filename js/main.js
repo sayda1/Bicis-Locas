@@ -23,6 +23,32 @@ function validateForm(){
             $("#salida1").text("");
         }  
     }
+    //validar apellido
+    if (!valiNombre.test(apellido)){
+       $("#salida1").text("Escriba correctamente su nombre");
+    }else{
+        if(apellido.toLowerCase())
+        {    document.getElementById("lastname").value=apellido.charAt(0).toUpperCase()+apellido.slice(1);
+         $("#salida2").text("");
+        }else{
+           $("#salida2").text("");
+        }  
+    }
+    //validar el correo
+    if (!valiCorreo.test(correo)){
+        $("#salida3").text("Verefique su correo.");
+    }else{
+      $("#salida3").text("");
+    }
+    //validar  contraseña
+    if (contra==="password" || contra==="123456"||contra==="098754"){
+       $("#salida4").text("Su contraseña no es valido.");
+    }else if (contra.length<=6){
+        $("#salida4").text("Su contraseña debe tener al menos 6 caracteres.");
+       
+    }else{
+      $("#salida4").text("");
+    } 
 }
 /*function validateForm()
 {   var valiNombre = /^[a-zA-Z]*$/;
